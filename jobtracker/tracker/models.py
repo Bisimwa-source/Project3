@@ -64,4 +64,18 @@ class Application(models.Model):
         return f"{self.job.title} - {self.status}"
 
 
+class Interview(models.Model):
+    interview_id = models.AutoField(primary_key=True)
+    application = models.ForeignKey(Application, on_delete=models.CASCADE, db_column='application_id')
+    interview_type = models.CharField(max_length=100)
+    interviewer_name = models.CharField(max_length=100)
+    interview_date = models.DateField()
+    notes = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField()
 
+    class Meta:
+        managed = False
+        db_table = 'Interviews'
+
+    def __str__(self):
+        return f"{self.interview_type} on {self.interview_date}" 
