@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Jobs</h1>
+
+<a class="btn" href="{% url 'job_create' %}">Add Job</a>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for j in jobs %}
+    <tr>
+        <td>{{ j.title }}</td>
+        <td>{{ j.company.company_name }}</td>
+        <td>{{ j.location }}</td>
+        <td>
+            <a class="edit" href="{% url 'job_update' j.job_id %}">Edit</a>
+            <a class="delete" href="{% url 'job_delete' j.job_id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

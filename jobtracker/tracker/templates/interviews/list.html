@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Interviews</h1>
+
+<a class="btn" href="{% url 'interview_create' %}">Add Interview</a>
+
+<table class="table">
+    <tr>
+        <th>Application</th>
+        <th>Type</th>
+        <th>Interviewer</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for i in interviews %}
+    <tr>
+        <td>{{ i.application.job.title }}</td>
+        <td>{{ i.interview_type }}</td>
+        <td>{{ i.interviewer_name }}</td>
+        <td>{{ i.interview_date }}</td>
+        <td>
+            <a class="edit" href="{% url 'interview_update' i.interview_id %}">Edit</a>
+            <a class="delete" href="{% url 'interview_delete' i.interview_id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
