@@ -1,8 +1,5 @@
 # AI_LOG.md — Generative AI Usage Disclosure
 
-
-
-
 ---
 
 ## 1. CRUD Views + Templates
@@ -16,6 +13,6 @@
 
 ## 2. Documentation
 - **Tool Used:** Microsoft Copilot
-- **Prompt:** “Generate README.md, NORMALIZATION.md, and AI_LOG.md.”
+- **Prompt:** “Generate README.md, and AI_LOG.md.”
 - **AI Output:** Produced structured documentation.
 - **My Modification:** Updated project‑specific details and formatting.
