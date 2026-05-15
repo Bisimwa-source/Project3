@@ -51,9 +51,6 @@ A computed Django property:
 
 ### Interviews(interview_id PK, application_id FK, interview_type, interviewer_name, interview_date, notes, created_at)
 
-All tables now satisfy:
-- 1NF (atomic values)
-- 2NF (no partial dependencies)
-- 3NF (no transitive dependencies)
+
 
 
